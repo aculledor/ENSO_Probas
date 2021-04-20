@@ -13,6 +13,7 @@ public class Principal {
 		System.out.println("UwU");
 		System.out.println("Prueba 2");
 		System.out.println("Soy yo");
+		System.out.println("Soy Acu2");
 	}
 
 }
