@@ -14,6 +14,7 @@ public class Principal {
 		System.out.println("Prueba 2");
 		System.out.println("Soy yo");
 		System.out.println("Soy Acu2");
+		System.out.println("Soy Noelia");
 	}
 
 }
