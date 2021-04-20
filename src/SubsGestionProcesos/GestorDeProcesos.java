@@ -9,6 +9,8 @@ import ModeladoDeDatos.Proceso;
 
 public class GestorDeProcesos implements InterfazGestorProcesos {
 
+	ArrayList<Proceso> procesos;
+	
 	@Override
 	public ArrayList<Proceso> getProcesos(String campoFiltro, String valorFiltro) {
 		// TODO Auto-generated method stub

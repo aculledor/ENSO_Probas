@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import ModeladoDeDatos.Incidencia;
 
 public class GestorDeIncidencias implements InterfazGestorIncidencias {
+	
+	ArrayList<Incidencia> incidencias;
 
 	@Override
 	public ArrayList<Incidencia> getIncidencias(String campoFiltro, String valorFiltro) {

@@ -8,6 +8,8 @@ import ModeladoDeDatos.Proceso;
 
 public class GestorDeOOTT implements InterfazGestorOOTT {
 
+	ArrayList<OT> ots;
+	
 	@Override
 	public ArrayList<OT> getOOTT(String campoFiltro, String valorFiltro) {
 		// TODO Auto-generated method stub
