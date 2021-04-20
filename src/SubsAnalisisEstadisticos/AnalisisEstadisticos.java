@@ -35,19 +35,19 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 	}
 
 	@Override
-	public HashMap<String, Integer> distribuciónIncidencias(String campoFiltro, String valorFiltro) {
+	public HashMap<String, Integer> distribucionIncidencias(String campoFiltro, String valorFiltro) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public HashMap<String, Integer> distribuciónProcesos(String campoFiltro, String valorFiltro) {
+	public HashMap<String, Integer> distribucionProcesos(String campoFiltro, String valorFiltro) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public HashMap<String, Integer> distribuciónOOTT(String campoFiltro, String valorFiltro) {
+	public HashMap<String, Integer> distribucionOOTT(String campoFiltro, String valorFiltro) {
 		// TODO Auto-generated method stub
 		return null;
 	}

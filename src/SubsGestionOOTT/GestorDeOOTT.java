@@ -16,7 +16,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 	@Override
 	public OT crearOT(String descripcion, List<String> material, List<Double> presupuestos, Float coste,
-			String responsable, List<String> personal, String fechaInicio, Integer duración, String estado,
+			String responsable, List<String> personal, String fechaInicio, Integer duracion, String estado,
 			Proceso proceso) {
 		// TODO Auto-generated method stub
 		return null;

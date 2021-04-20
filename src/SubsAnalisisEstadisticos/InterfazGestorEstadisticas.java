@@ -8,7 +8,7 @@ public interface InterfazGestorEstadisticas {
 	Integer totalOOTT(String campoFiltro, String valorFiltro);
 	Float costesProcesos(String campoFiltro, String valorFiltro);
 	Float costesOOTT(String campoFiltro, String valorFiltro);
-	HashMap<String, Integer> distribuciónIncidencias(String campoFiltro, String valorFiltro);
-	HashMap<String, Integer> distribuciónProcesos(String campoFiltro, String valorFiltro);
-	HashMap<String, Integer> distribuciónOOTT(String campoFiltro, String valorFiltro);
+	HashMap<String, Integer> distribucionIncidencias(String campoFiltro, String valorFiltro);
+	HashMap<String, Integer> distribucionProcesos(String campoFiltro, String valorFiltro);
+	HashMap<String, Integer> distribucionOOTT(String campoFiltro, String valorFiltro);
 }

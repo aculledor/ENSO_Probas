@@ -8,7 +8,7 @@ import ModeladoDeDatos.*;
 public interface InterfazGestorOOTT {
 		ArrayList<OT> getOOTT(String campoFiltro, String valorFiltro);
 		OT crearOT(String descripcion, List<String> material, List<Double> presupuestos, Float coste, String
-		responsable, List<String> personal, String fechaInicio, Integer duración, String estado, Proceso proceso);
+		responsable, List<String> personal, String fechaInicio, Integer duracion, String estado, Proceso proceso);
 		void actualizarOT(String ID, String campo, String valor);
 		void incluirPresupuesto(String ID, Float presupuesto);
 		void retirarPresupuesto(String ID, Float presupuesto);

@@ -13,7 +13,7 @@ public class GestorDeIncidencias implements InterfazGestorIncidencias {
 	}
 
 	@Override
-	public Incidencia crearIncidencia(String DNI, String nombre, String tlf, String descripcion, String localización,
+	public Incidencia crearIncidencia(String DNI, String nombre, String tlf, String descripcion, String localizacion,
 			String tipo) {
 		// TODO Auto-generated method stub
 		return null;
