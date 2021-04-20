@@ -10,11 +10,7 @@ public class Principal {
 		System.out.println(ca.resta(7, 3));
 		ca.suma(5, 6);
 		ca.resta(7, 3);
-		System.out.println("UwU");
-		System.out.println("Prueba 2");
-		System.out.println("Soy yo");
-		System.out.println("Soy Acu2");
-		System.out.println("Soy Noelia");
+		System.out.println("Ahora soy el último comentario! Muajajajajaj!!!");
 	}
 
 }
