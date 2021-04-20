@@ -12,6 +12,8 @@ public class Principal {
 		ca.resta(7, 3);
 		System.out.println("UwU");
 		System.out.println("Prueba 2");
+		System.out.println("Soy yo");
+		System.out.println("Soy Acu2");
 		System.out.println("Soy Noelia");
 	}
 
