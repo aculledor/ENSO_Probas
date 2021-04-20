@@ -29,6 +29,36 @@ public class Proceso {
 		this.incidencias = incidencias;
 		this.ots = ots;
 	}
+
+	public Proceso(String nombre, String descripcion, Float coste, Integer estimado, String estado, String responsable,
+			String servicio, ArrayList<Incidencia> incidencias) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.coste = coste;
+		this.estimado = estimado;
+		this.estado = estado;
+		this.responsable = responsable;
+		this.servicio = servicio;
+		this.incidencias = incidencias;
+		this.ots = new ArrayList<>();
+	}
+
+	public Proceso(String nombre, String descripcion, Float coste, Integer estimado, String estado, String responsable,
+			String servicio, Incidencia incidencia) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.coste = coste;
+		this.estimado = estimado;
+		this.estado = estado;
+		this.responsable = responsable;
+		this.servicio = servicio;
+		this.incidencias = new ArrayList<>();
+		this.incidencias.add(incidencia);
+		this.ots = new ArrayList<>();
+	}
+	
 	
 	
 	
