@@ -10,6 +10,8 @@ public class Principal {
 		System.out.println(ca.resta(7, 3));
 		ca.suma(5, 6);
 		ca.resta(7, 3);
+		System.out.println("UwU");
+		System.out.println("Prueba 2");
 	}
 
 }
