@@ -2,7 +2,24 @@ package SubsAnalisisEstadisticos;
 
 import java.util.HashMap;
 
+import SubsGestionIncidencias.InterfazGestorIncidencias;
+import SubsGestionOOTT.InterfazGestorOOTT;
+import SubsGestionProcesos.InterfazGestorProcesos;
+
 public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
+	
+	InterfazGestorIncidencias incidencias;
+	InterfazGestorProcesos procesos;
+	InterfazGestorOOTT ots;
+	
+
+	public AnalisisEstadisticos(InterfazGestorIncidencias incidencias, InterfazGestorProcesos procesos,
+			InterfazGestorOOTT ots) {
+		super();
+		this.incidencias = incidencias;
+		this.procesos = procesos;
+		this.ots = ots;
+	}
 
 	@Override
 	public Integer totalIncidencias(String campoFiltro, String valorFiltro) {
