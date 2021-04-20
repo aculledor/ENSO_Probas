@@ -10,6 +10,7 @@ public class Incidencia {
 	private String descripcion;
 	private String localizacion;
 	private String tipo;
+	private Proceso proceso;
 	
 	// Constructor
 	public Incidencia(String ID, String nombreCiudadano, String DNI, String telefono, String descripcion,
@@ -22,6 +23,18 @@ public class Incidencia {
 		this.descripcion = descripcion;
 		this.localizacion = localizacion;
 		this.tipo = tipo;
+	}
+	public Incidencia(String ID, String nombreCiudadano, String DNI, String telefono, String descripcion,
+			String localizacion, String tipo, Proceso proceso) {
+		super();
+		this.ID = ID;
+		this.nombreCiudadano = nombreCiudadano;
+		this.DNI = DNI;
+		this.telefono = telefono;
+		this.descripcion = descripcion;
+		this.localizacion = localizacion;
+		this.tipo = tipo;
+		this.proceso = proceso;
 	}
 	
 	// Getters y setters
@@ -67,5 +80,13 @@ public class Incidencia {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	public Proceso getProceso() {
+		return proceso;
+	}
+	public void setProceso(Proceso proceso) {
+		this.proceso = proceso;
+	}
+	
+	
 	
 }
