@@ -61,7 +61,6 @@ public class Proceso {
 	
 	
 	
-	
 	// Getters y setters
 
 	public String getNombre() {
