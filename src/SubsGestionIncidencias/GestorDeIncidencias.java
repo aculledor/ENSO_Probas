@@ -7,6 +7,21 @@ import ModeladoDeDatos.Incidencia;
 public class GestorDeIncidencias implements InterfazGestorIncidencias {
 	
 	ArrayList<Incidencia> incidencias;
+	
+
+	//Constructors
+	public GestorDeIncidencias(ArrayList<Incidencia> incidencias) {
+		super();
+		this.incidencias = incidencias;
+	}
+	
+
+	public GestorDeIncidencias() {
+		super();
+		this.incidencias = new ArrayList<>();
+	}
+
+
 
 	@Override
 	public ArrayList<Incidencia> getIncidencias(String campoFiltro, String valorFiltro) {

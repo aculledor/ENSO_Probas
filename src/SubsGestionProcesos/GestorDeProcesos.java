@@ -11,6 +11,18 @@ public class GestorDeProcesos implements InterfazGestorProcesos {
 
 	ArrayList<Proceso> procesos;
 	
+	//Constructors
+	public GestorDeProcesos() {
+		super();
+		this.procesos = new ArrayList<>();
+	}
+	
+	public GestorDeProcesos(ArrayList<Proceso> procesos) {
+		super();
+		this.procesos = procesos;
+	}
+
+
 	@Override
 	public ArrayList<Proceso> getProcesos(String campoFiltro, String valorFiltro) {
 		// TODO Auto-generated method stub
