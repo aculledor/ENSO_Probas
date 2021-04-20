@@ -10,6 +10,19 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 	ArrayList<OT> ots;
 	
+	//Constructors
+	public GestorDeOOTT() {
+		super();
+		this.ots = new ArrayList<>();
+	}
+	
+	public GestorDeOOTT(ArrayList<OT> ots) {
+		super();
+		this.ots = ots;
+	}
+
+
+
 	@Override
 	public ArrayList<OT> getOOTT(String campoFiltro, String valorFiltro) {
 		// TODO Auto-generated method stub

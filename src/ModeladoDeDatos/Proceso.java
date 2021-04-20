@@ -1,5 +1,7 @@
 package ModeladoDeDatos;
 
+import java.util.ArrayList;
+
 public class Proceso {
 	
 	// Atributos
@@ -10,11 +12,12 @@ public class Proceso {
 	private String estado;
 	private String responsable;
 	private String servicio;
+	private ArrayList<Incidencia> incidencias;
+	private ArrayList<OT> ots;
 	
 	// Constructor
-	
 	public Proceso(String nombre, String descripcion, Float coste, Integer estimado, String estado, String responsable,
-			String servicio) {
+			String servicio, ArrayList<Incidencia> incidencias, ArrayList<OT> ots) {
 		super();
 		this.nombre = nombre;
 		this.descripcion = descripcion;
@@ -23,7 +26,11 @@ public class Proceso {
 		this.estado = estado;
 		this.responsable = responsable;
 		this.servicio = servicio;
+		this.incidencias = incidencias;
+		this.ots = ots;
 	}
+	
+	
 	
 	// Getters y setters
 
@@ -82,5 +89,23 @@ public class Proceso {
 	public void setServicio(String servicio) {
 		this.servicio = servicio;
 	}
+
+	public ArrayList<Incidencia> getIncidencias() {
+		return incidencias;
+	}
+
+	public void setIncidencias(ArrayList<Incidencia> incidencias) {
+		this.incidencias = incidencias;
+	}
+
+	public ArrayList<OT> getOts() {
+		return ots;
+	}
+
+	public void setOts(ArrayList<OT> ots) {
+		this.ots = ots;
+	}
+	
+	
 	
 }
