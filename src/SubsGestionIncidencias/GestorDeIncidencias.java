@@ -106,19 +106,23 @@ public class GestorDeIncidencias implements InterfazGestorIncidencias {
 									// Se devuelve la lista
 									return resultado;
 								} else {
+									//si el valor dni es incorrecto se avisa al usuario y se devuelve null
 									System.out.println("El dni tiene un formato incorrecto. La letar no coincide.");
 									return null;
 								}
 							} else {
+								//si el valor dni es incorrecto se avisa al usuario y se devuelve null
 								System.out.println(
 										"El dni tiene un formato incorrecto. Debe contener 8 cifras + 1 letra.");
 								return null;
 							}
 						} else {
+							//si el valor dni es incorrecto se avisa al usuario y se devuelve null
 							System.out.println("El dni tiene un formato incorrecto. Debe contener 8 cifras + 1 letra.");
 							return null;
 						}
 					} else {
+						//si el valor dni es incorrecto se avisa al usuario y se devuelve null
 						System.out.println("El dni tiene un formato incorrecto. Debe ser una cadena de 9 caracetres");
 						return null;
 					}
@@ -235,6 +239,7 @@ public class GestorDeIncidencias implements InterfazGestorIncidencias {
 				System.out.println("El valor del filtro no puede ser nulo si se ha indicado un campo de filtro");
 				return null;
 			default:
+				//si no existe el campo se avisa al usuario
 				System.out.println("El campo indicado no existe");
 				return null;
 			}
@@ -284,14 +289,17 @@ public class GestorDeIncidencias implements InterfazGestorIncidencias {
 						}
 					}
 				} else {
+					//si el valor dni es incorrecto se avisa al usuario y se devuelve null
 					System.out.println("El dni tiene un formato incorrecto. Debe contener 8 cifras + 1 letra.");
 					return null;
 				}
 			} else {
+				//si el valor dni es incorrecto se avisa al usuario y se devuelve null
 				System.out.println("El dni tiene un formato incorrecto. Debe contener 9 carácteres.");
 				return null;
 			}
 		} else {
+			//si el valor dni es incorrecto se avisa al usuario y se devuelve null
 			System.out.println("El dni es null");
 			return null;
 		}
@@ -356,14 +364,17 @@ public class GestorDeIncidencias implements InterfazGestorIncidencias {
 								}
 							}
 						}
+						//si el valor tipo es incorrecto se avisa al usuario y se devuelve null
 						System.out.println("El valor tipo tiene un formato no valido");
 						return null;
 					}
 				}
 			}
+			//si el valor localización es incorrecto se avisa al usuario y se devuelve null
 			System.out.println("El valor localizacion tiene un formato no valido");
 			return null;
 		}
+		//si el valor descripcion es incorrecto se avisa al usuario y se devuelve null
 		System.out.println("El valor descripcion tiene un formato no valido");
 		return null;
 	}
@@ -451,6 +462,7 @@ public class GestorDeIncidencias implements InterfazGestorIncidencias {
 								break;
 
 							default:
+								//si el campo no existe, se avisa al usuario
 								System.out.println("El campo indicado no existe");
 							}
 						}
@@ -462,10 +474,8 @@ public class GestorDeIncidencias implements InterfazGestorIncidencias {
 				return;
 
 			}
-			// Si el valor del filtro tiene un valor o formato incorrecto, se informa al
-			// usuario
+			//Si el id tiene un formato incorrecto se avisa al usuario
 			System.out.println("El valor del ID tiene un valor o formato incorrecto");
-			return;
 		} else {
 			// si el id es nulll se avisa al usuario
 			System.out.println("El ID es null");
