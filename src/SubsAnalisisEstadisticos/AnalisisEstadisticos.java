@@ -359,12 +359,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 				// Se comprueba que el valor del filtro no sea nulo
 				if (valorFiltro != null) {
 					// Se comprueba que se emplea el formato correcto
-					if (valorFiltro.length() == 9
-							&& (Character.isDigit(valorFiltro.charAt(0)) || Character.isLetter(valorFiltro.charAt(0)))
-							&& Character.isDigit(valorFiltro.charAt(1)) && Character.isDigit(valorFiltro.charAt(2))
-							&& Character.isDigit(valorFiltro.charAt(3)) && Character.isDigit(valorFiltro.charAt(4))
-							&& Character.isDigit(valorFiltro.charAt(5)) && Character.isDigit(valorFiltro.charAt(6))
-							&& Character.isDigit(valorFiltro.charAt(7)) && Character.isLetter(valorFiltro.charAt(8))) {
+					if (valorFiltro.length() > 0 && valorFiltro.length() <= 50) {
 						// Se recorre la lista
 						for (Proceso p : listaProcesos)
 							// Se aumenta el contador por cada elemento que cumpla el filtro
@@ -496,12 +491,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 				// Se comprueba que el valor del filtro no sea nulo
 				if (valorFiltro != null) {
 					// Se comprueba que se emplea el formato correcto
-					if (valorFiltro.length() == 9
-							&& (Character.isDigit(valorFiltro.charAt(0)) || Character.isLetter(valorFiltro.charAt(0)))
-							&& Character.isDigit(valorFiltro.charAt(1)) && Character.isDigit(valorFiltro.charAt(2))
-							&& Character.isDigit(valorFiltro.charAt(3)) && Character.isDigit(valorFiltro.charAt(4))
-							&& Character.isDigit(valorFiltro.charAt(5)) && Character.isDigit(valorFiltro.charAt(6))
-							&& Character.isDigit(valorFiltro.charAt(7)) && Character.isLetter(valorFiltro.charAt(8))) {
+					if (valorFiltro.length() > 0 && valorFiltro.length() <= 20) {
 						// Se recorre la lista
 						for (OT ot : listaOOTT)
 							// Se aumenta el contador por cada elemento que cumpla el filtro
@@ -727,12 +717,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 						// Se comprueba que el valor del filtro no sea nulo
 						if (valorFiltro != null) {
 							// Se comprueba que se emplea el formato correcto
-							if (valorFiltro.length() == 9
-									&& (Character.isDigit(valorFiltro.charAt(0)) || Character.isLetter(valorFiltro.charAt(0)))
-									&& Character.isDigit(valorFiltro.charAt(1)) && Character.isDigit(valorFiltro.charAt(2))
-									&& Character.isDigit(valorFiltro.charAt(3)) && Character.isDigit(valorFiltro.charAt(4))
-									&& Character.isDigit(valorFiltro.charAt(5)) && Character.isDigit(valorFiltro.charAt(6))
-									&& Character.isDigit(valorFiltro.charAt(7)) && Character.isLetter(valorFiltro.charAt(8))) {
+							if (valorFiltro.length() > 0 && valorFiltro.length() <= 50) {
 								// Se recorre la lista
 								for (Proceso p : listaProcesos)
 									// Se aumenta el contador por cada elemento que cumpla el filtro
@@ -864,12 +849,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 						// Se comprueba que el valor del filtro no sea nulo
 						if (valorFiltro != null) {
 							// Se comprueba que se emplea el formato correcto
-							if (valorFiltro.length() == 9
-									&& (Character.isDigit(valorFiltro.charAt(0)) || Character.isLetter(valorFiltro.charAt(0)))
-									&& Character.isDigit(valorFiltro.charAt(1)) && Character.isDigit(valorFiltro.charAt(2))
-									&& Character.isDigit(valorFiltro.charAt(3)) && Character.isDigit(valorFiltro.charAt(4))
-									&& Character.isDigit(valorFiltro.charAt(5)) && Character.isDigit(valorFiltro.charAt(6))
-									&& Character.isDigit(valorFiltro.charAt(7)) && Character.isLetter(valorFiltro.charAt(8))) {
+							if (valorFiltro.length() > 0 && valorFiltro.length() <= 20) {
 								// Se recorre la lista
 								for (OT ot : listaOOTT)
 									// Se aumenta el contador por cada elemento que cumpla el filtro
