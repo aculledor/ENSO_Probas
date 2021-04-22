@@ -8,7 +8,7 @@ public class OT {
 	private String ID;
 	private String descripcion;
 	private ArrayList<String> material;
-	private ArrayList<Float> presupuestos;
+	private ArrayList<Double> presupuestos;
 	private Float coste;
 	private String responsable;
 	private ArrayList<String> personal;
@@ -18,7 +18,7 @@ public class OT {
 	private Proceso proceso;
 	
 	// Constructor
-	public OT(String ID, String descripcion, ArrayList<String> material, ArrayList<Float> presupuestos, Float coste,
+	public OT(String ID, String descripcion, ArrayList<String> material, ArrayList<Double> presupuestos, Float coste,
 			String responsable, ArrayList<String> personal, String fechaInicio, Integer duracion, String estado, Proceso proceso) {
 		super();
 		this.ID = ID;
@@ -59,11 +59,11 @@ public class OT {
 		this.material = material;
 	}
 
-	public ArrayList<Float> getPresupuestos() {
+	public ArrayList<Double> getPresupuestos() {
 		return presupuestos;
 	}
 
-	public void setPresupuestos(ArrayList<Float> presupuestos) {
+	public void setPresupuestos(ArrayList<Double> presupuestos) {
 		this.presupuestos = presupuestos;
 	}
 
