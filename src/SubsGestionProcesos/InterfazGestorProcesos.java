@@ -12,5 +12,4 @@ public interface InterfazGestorProcesos {
 	void actualizarProceso(String nombre, String campo, String valor);
 	void eliminarProceso(String nombre);
 	void vincularIncidencia(String nombre, Incidencia incidencia);
-	void vincularOT(String nombre, OT ot);
 }

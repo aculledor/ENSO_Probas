@@ -336,30 +336,5 @@ public class GestorDeProcesos implements InterfazGestorProcesos {
 		}
 		System.out.println("La incidencia seleccionada no es válida");
 	}
-
-	@Override
-	public void vincularOT(String nombre, OT ot) {
-		if(ot!=null) {
-			if(nombre!=null && nombre.length()>0 && nombre.length()<=20) {
-				Boolean vinculado=false;
-				for(int i=0;i<this.procesos.size();i++) {
-					if(this.procesos.get(i).getNombre().equals(nombre)) {
-						this.procesos.get(i).getOts().add(ot);
-						ot.setProceso(this.procesos.get(i));
-						vinculado=true;
-						break;
-					}
-				}
-				if(vinculado)
-					System.out.println("Se ha vinculado la Orden de Trabajo al proceso");
-				else
-					System.out.println("El proceso con el nombre indicado no existe");
-			}
-			System.out.println("El nombre introducido no es correcto");
-			return;
-		}
-		System.out.println("La Orden de Trabajo seleccionada no es válida");
-		
-	}
 	
 }
