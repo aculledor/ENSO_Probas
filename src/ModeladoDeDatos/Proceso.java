@@ -151,6 +151,38 @@ public class Proceso {
 	public String getFechaCreacion() {
 		return fechaCreacion;
 	}
+
+	@Override
+	public String toString() {
+		return "Proceso [nombre=" + nombre + ", descripcion=" + descripcion + ", coste=" + coste + ", estimado="
+				+ estimado + ", estado=" + estado + ", responsable=" + responsable + ", servicio=" + servicio
+				+ ", incidencias=" + incidencias + ", ots=" + ots + ", fechaCreacion=" + fechaCreacion + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Proceso other = (Proceso) obj;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		return true;
+	}
 	
 	
 	
