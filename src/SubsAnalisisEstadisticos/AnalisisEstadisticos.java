@@ -85,15 +85,34 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 				System.out.println("El valor del filtro no puede ser nulo si se ha indicado un campo de filtro");
 				return null;
 			case "dni":
+				int sum = 0, dniCount = 0, mod;
+				Character mayus, minus;
+				String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
 				// Se comprueba que el valor del filtro no sea nulo
 				if (valorFiltro != null) {
 					// Se comprueba que se emplea el formato correcto
-					if (valorFiltro.length() == 9 && Character.isDigit(valorFiltro.charAt(0))
-							&& Character.isDigit(valorFiltro.charAt(1)) && Character.isDigit(valorFiltro.charAt(2))
-							&& Character.isDigit(valorFiltro.charAt(3)) && Character.isDigit(valorFiltro.charAt(4))
-							&& Character.isDigit(valorFiltro.charAt(5)) && Character.isDigit(valorFiltro.charAt(6))
-							&& Character.isDigit(valorFiltro.charAt(7)) && Character.isLetter(valorFiltro.charAt(8))) {
-						// Se recorre la lista
+					if (valorFiltro.length() == 9) {
+						// contamos cuentos numeros hay y los sumamos
+						for (int i = 0; i < valorFiltro.length(); i++) {
+							if (Character.isDigit(valorFiltro.charAt(i))) {
+								dniCount++;
+								sum += Character.getNumericValue(valorFiltro.charAt(i));
+							}
+						}
+						// si el dni tiene 8 números
+						if (dniCount == 8) {
+							// comprobamos que el caracter final es una letra
+							if (Character.isAlphabetic(valorFiltro.charAt(valorFiltro.length() - 1))) {
+								// comprobamos que la letra es la que le corresponde
+								mod = sum % 23 - 1;
+								// obtenemos la letra esperada
+								mayus = letras.charAt(mod);
+								// pasamos la letra esperada a minuscula
+								minus = letras.toLowerCase().charAt(mod);
+								// si la letra introducida no es la esperdada en mayuscula
+								if (mayus.equals(valorFiltro.charAt(valorFiltro.length() - 1))
+										|| minus.equals(valorFiltro.charAt(valorFiltro.length() - 1))) {
+									// Se recorre la lista
 						for (Incidencia i : listaIncidencias)
 							// Se aumenta el contador por cada elemento que cumpla el filtro
 							if (i.getDNI().equals(valorFiltro))
@@ -1139,16 +1158,34 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 					System.out.println("El valor del filtro no puede ser nulo si se ha indicado un campo de filtro");
 					return null;
 				case "dni":
+					int sum = 0, dniCount = 0, mod;
+					Character mayus, minus;
+					String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
 					// Se comprueba que el valor del filtro no sea nulo
 					if (valorFiltro != null) {
 						// Se comprueba que se emplea el formato correcto
-						if (valorFiltro.length() == 9 && Character.isDigit(valorFiltro.charAt(0))
-								&& Character.isDigit(valorFiltro.charAt(1)) && Character.isDigit(valorFiltro.charAt(2))
-								&& Character.isDigit(valorFiltro.charAt(3)) && Character.isDigit(valorFiltro.charAt(4))
-								&& Character.isDigit(valorFiltro.charAt(5)) && Character.isDigit(valorFiltro.charAt(6))
-								&& Character.isDigit(valorFiltro.charAt(7))
-								&& Character.isLetter(valorFiltro.charAt(8))) {
-							// Se recorre la lista
+						if (valorFiltro.length() == 9) {
+							// contamos cuentos numeros hay y los sumamos
+							for (int i = 0; i < valorFiltro.length(); i++) {
+								if (Character.isDigit(valorFiltro.charAt(i))) {
+									dniCount++;
+									sum += Character.getNumericValue(valorFiltro.charAt(i));
+								}
+							}
+							// si el dni tiene 8 números
+							if (dniCount == 8) {
+								// comprobamos que el caracter final es una letra
+								if (Character.isAlphabetic(valorFiltro.charAt(valorFiltro.length() - 1))) {
+									// comprobamos que la letra es la que le corresponde
+									mod = sum % 23 - 1;
+									// obtenemos la letra esperada
+									mayus = letras.charAt(mod);
+									// pasamos la letra esperada a minuscula
+									minus = letras.toLowerCase().charAt(mod);
+									// si la letra introducida no es la esperdada en mayuscula
+									if (mayus.equals(valorFiltro.charAt(valorFiltro.length() - 1))
+											|| minus.equals(valorFiltro.charAt(valorFiltro.length() - 1))) {
+										// Se recorre la lista
 							for (Incidencia i : listaIncidencias)
 								// Se aumenta el contador por cada elemento que cumpla el filtro
 								if (i.getDNI().equals(valorFiltro)) {
