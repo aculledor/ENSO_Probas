@@ -294,15 +294,17 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 										// si la letra introducida no es la esperdada en mayuscula
 										if (!(mayus.equals(DNI.charAt(DNI.length() - 1)))) {
 											// si la letra introducida no es la esperada en minuscula
-											if (!(minus.equals(DNI.charAt(DNI.length() - 1)))) {
-												// informamos al usuario y enviamos null
-												System.out.println(
-														"El dni no tiene un formato valido. Letra no coincide.");
-												return null;
-											}
+											return null;
+										}
+										if (!(minus.equals(DNI.charAt(DNI.length() - 1)))) {
+											// informamos al usuario y enviamos null
+											System.out.println("El dni no tiene un formato valido. Letra no coincide.");
+											return null;
 										}
 									}
+
 								}
+
 								if (fechaInicio != null) {
 									String[] partes = fechaInicio.split("/");
 									if (fechaInicio.length() == 8 && Character.isDigit(fechaInicio.charAt(0))
@@ -366,9 +368,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 				System.out.println("El valor de 'material' es incorrecto (nulo o vacio)");
 				return null;
 			}
-		} else
-
-		{
+		} else {
 			System.out.println("El valor de 'descripcion' es incorrecto (nulo o vacio)");
 			return null;
 		}
