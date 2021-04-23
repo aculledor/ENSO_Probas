@@ -143,66 +143,68 @@ public class GestorDeProcesos implements InterfazGestorProcesos {
 	}
 
 	@Override
-	public Proceso crearProceso(String nombre, String descripcion, Float coste, Integer estimado, String estado,
-			String responsable, String servicio, List<Incidencia> incidencia) {
-
-		if(nombre!=null && nombre.length()>0 && nombre.length()<=50) {
-			Boolean enUso=false;
-			for(int i=0;i<this.procesos.size();i++) {
-				if(this.procesos.get(i).getNombre().equals(nombre)) {
-					enUso=true;
-				}
-			}
-			if(!enUso) {
-				if(descripcion.length()>0 && descripcion.length()<=200) {
-					if(coste!=null && coste>0) {
-						if(estimado!=null && estimado>0) {
-							if(estado!=null && estado.length()>0 && estado.length()<=20) {
-								if(responsable!=null && responsable.length()>0 && responsable.length()<=50) {
-									if(servicio!=null && servicio.length()>0 && servicio.length()<=50) {
-										if(incidencia!=null && !incidencia.isEmpty()) {
-											boolean hayNull=false;
-											for(int i=0;i<incidencia.size();i++) {
-												if(incidencia.get(i)==null) {
-													hayNull=true;
-												}
-											}
-											if(!hayNull) {
-												Proceso toret=new Proceso(nombre, descripcion, coste, estimado, estado, responsable,
-														servicio, new ArrayList<Incidencia>(incidencia));
-												this.procesos.add(toret);
-												return toret;
-											}
-											System.out.println("El valor de 'incidencia' es incorrecto (contiene nulos)");
-											return null;
-										}
-										System.out.println("El valor de 'incidencia' es incorrecto (nulo o vacio)");
-										return null;
-									}
-									System.out.println("El valor de 'servicio' es incorrecto (nulo, vacio o demasiado largo)");
-									return null;
-								}
-								System.out.println("El valor de 'responsable' es incorrecto (nulo, vacio o demasiado largo)");
-								return null;
-							}
-							System.out.println("El valor de 'estado' es incorrecto (nulo, vacio o demasiado largo)");
-							return null;
-						}
-						System.out.println("El valor de 'estimado' es incorrecto (nulo o menor que 0)");
-						return null;
-					}
-					System.out.println("El valor de 'coste' es incorrecto (nulo o menor que 0)");
-					return null;
-				}
-				System.out.println("El valor de 'descripcion' es incorrecto (demasiado largo)");
-				return null;
-			}
-			System.out.println("El valor de 'nombre' ya está en uso");
-			return null;
-		}
-		System.out.println("El valor de 'nombre' es incorrecto (nulo, vacio o demasiado largo)");
-		return null;
-	}
+    public Proceso crearProceso(String nombre, String descripcion, Float coste, Integer estimado, String estado,
+            String responsable, String servicio, List<Incidencia> incidencia) {
+        if(nombre!=null && nombre.length()>0 && nombre.length()<=50) {
+            Boolean enUso=false;
+            for(int i=0;i<this.procesos.size();i++) {
+                if(this.procesos.get(i).getNombre().equals(nombre)) {
+                    enUso=true;
+                }
+            }
+            if(!enUso) {
+                if(descripcion.length()>0 && descripcion.length()<=200) {
+                    if(coste!=null && coste>0) {
+                        if(estimado!=null && estimado>0) {
+                            if(estado!=null && estado.length()>0 && estado.length()<=20) {
+                                if(responsable!=null && responsable.length()>0 && responsable.length()<=50) {
+                                    if(servicio!=null && servicio.length()>0 && servicio.length()<=50) {
+                                        if(incidencia!=null && !incidencia.isEmpty()) {
+                                            boolean hayNull=false;
+                                            for(int i=0;i<incidencia.size();i++) {
+                                                if(incidencia.get(i)==null) {
+                                                    hayNull=true;
+                                                }
+                                            }
+                                            if(!hayNull) {
+                                                Proceso toret=new Proceso(nombre, descripcion, coste, estimado, estado, responsable,
+                                                        servicio, new ArrayList<Incidencia>(incidencia));
+                                                for(int i=0;i<incidencia.size();i++) {
+                                                    incidencia.get(i).setProceso(toret);
+                                                }
+                                                this.procesos.add(toret);
+                                                return toret;
+                                            }
+                                            System.out.println("El valor de 'incidencia' es incorrecto (contiene nulos)");
+                                            return null;
+                                        }
+                                        System.out.println("El valor de 'incidencia' es incorrecto (nulo o vacio)");
+                                        return null;
+                                    }
+                                    System.out.println("El valor de 'servicio' es incorrecto (nulo, vacio o demasiado largo)");
+                                    return null;
+                                }
+                                System.out.println("El valor de 'responsable' es incorrecto (nulo, vacio o demasiado largo)");
+                                return null;
+                            }
+                            System.out.println("El valor de 'estado' es incorrecto (nulo, vacio o demasiado largo)");
+                            return null;
+                        }
+                        System.out.println("El valor de 'estimado' es incorrecto (nulo o menor que 0)");
+                        return null;
+                    }
+                    System.out.println("El valor de 'coste' es incorrecto (nulo o menor que 0)");
+                    return null;
+                }
+                System.out.println("El valor de 'descripcion' es incorrecto (demasiado largo)");
+                return null;
+            }
+            System.out.println("El valor de 'nombre' ya está en uso");
+            return null;
+        }
+        System.out.println("El valor de 'nombre' es incorrecto (nulo, vacio o demasiado largo)");
+        return null;
+    }
 
 	@Override
 	public void actualizarProceso(String nombre, String campo, String valor) {
