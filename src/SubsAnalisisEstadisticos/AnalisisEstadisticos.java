@@ -119,11 +119,27 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 								contador++;
 						// Se devuelve el contador
 						return contador;
+								} else {
+									//si el valor dni es incorrecto se avisa al usuario y se devuelve null
+									System.out.println("El dni tiene un formato incorrecto. La letra no coincide.");
+									return null;
+								}
+							} else {
+								//si el valor dni es incorrecto se avisa al usuario y se devuelve null
+								System.out.println(
+										"El dni tiene un formato incorrecto. Debe contener 8 cifras + 1 letra.");
+								return null;
+							}
+						} else {
+							//si el valor dni es incorrecto se avisa al usuario y se devuelve null
+							System.out.println("El dni tiene un formato incorrecto. Debe contener 8 cifras + 1 letra.");
+							return null;
+						}
+					} else {
+						//si el valor dni es incorrecto se avisa al usuario y se devuelve null
+						System.out.println("El dni tiene un formato incorrecto. Debe ser una cadena de 9 caracetres");
+						return null;
 					}
-					// Si el valor del filtro tiene un valor o formato incorrecto, se informa al
-					// usuario y se devuelve un null
-					System.out.println("El valor del filtro tiene un valor o formato incorrecto");
-					return null;
 				}
 				// Si el valor del filtro es nulo, se informa al usuario y se devuelve un null
 				System.out.println("El valor del filtro no puede ser nulo si se ha indicado un campo de filtro");
@@ -1226,11 +1242,27 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 								}
 							// Se devuelve el contador
 							return contador;
+									} else {
+										//si el valor dni es incorrecto se avisa al usuario y se devuelve null
+										System.out.println("El dni tiene un formato incorrecto. La letra no coincide.");
+										return null;
+									}
+								} else {
+									//si el valor dni es incorrecto se avisa al usuario y se devuelve null
+									System.out.println(
+											"El dni tiene un formato incorrecto. Debe contener 8 cifras + 1 letra.");
+									return null;
+								}
+							} else {
+								//si el valor dni es incorrecto se avisa al usuario y se devuelve null
+								System.out.println("El dni tiene un formato incorrecto. Debe contener 8 cifras + 1 letra.");
+								return null;
+							}
+						} else {
+							//si el valor dni es incorrecto se avisa al usuario y se devuelve null
+							System.out.println("El dni tiene un formato incorrecto. Debe ser una cadena de 9 caracetres");
+							return null;
 						}
-						// Si el valor del filtro tiene un valor o formato incorrecto, se informa al
-						// usuario y se devuelve un null
-						System.out.println("El valor del filtro tiene un valor o formato incorrecto");
-						return null;
 					}
 					// Si el valor del filtro es nulo, se informa al usuario y se devuelve un null
 					System.out.println("El valor del filtro no puede ser nulo si se ha indicado un campo de filtro");
