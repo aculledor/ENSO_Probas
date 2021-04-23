@@ -1,5 +1,9 @@
 package ModeladoDeDatos;
 
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 public class Incidencia {
 	
 	// Atributos
@@ -11,6 +15,7 @@ public class Incidencia {
 	private String localizacion;
 	private String tipo;
 	private Proceso proceso;
+	private String fechaCreacion;
 	
 	// Constructor
 	public Incidencia(String ID, String nombreCiudadano, String DNI, String telefono, String descripcion,
@@ -23,6 +28,9 @@ public class Incidencia {
 		this.descripcion = descripcion;
 		this.localizacion = localizacion;
 		this.tipo = tipo;
+		DateFormat format = new SimpleDateFormat("dd/MM/yy");
+		Date hoy = new Date();
+		this.fechaCreacion = format.format(hoy);
 	}
 	public Incidencia(String ID, String nombreCiudadano, String DNI, String telefono, String descripcion,
 			String localizacion, String tipo, Proceso proceso) {
@@ -35,6 +43,9 @@ public class Incidencia {
 		this.localizacion = localizacion;
 		this.tipo = tipo;
 		this.proceso = proceso;
+		DateFormat format = new SimpleDateFormat("dd/MM/yy");
+		Date hoy = new Date();
+		this.fechaCreacion = format.format(hoy);
 	}
 	
 	// Getters y setters
@@ -86,7 +97,9 @@ public class Incidencia {
 	public void setProceso(Proceso proceso) {
 		this.proceso = proceso;
 	}
-	
+	public String getFechaCreacion() {
+		return fechaCreacion;
+	}
 	
 	
 }

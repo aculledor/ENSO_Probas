@@ -215,7 +215,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 			Proceso proceso) {
 		// TODO Auto-generated method stub
 		OT ot = null;
-		if (descripcion != null && descripcion.length() > 0 && descripcion.length() <= 200) {
+		if (descripcion.length() > 0 && descripcion.length() <= 200) {
 			if (material != null && !material.isEmpty()) {
 				for (int i = 0; i < material.size(); i++) {
 					if (material.get(i) == null) {
