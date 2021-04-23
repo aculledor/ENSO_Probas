@@ -215,6 +215,9 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 			Proceso proceso) {
 		// TODO Auto-generated method stub
 		OT ot = null;
+		String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+		int sum = 0;
+		Character mayus, minus;
 		if (descripcion.length() > 0 && descripcion.length() <= 200) {
 			if (material != null && !material.isEmpty()) {
 				for (int i = 0; i < material.size(); i++) {
@@ -222,10 +225,10 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 						System.out.println("Algun material de los introducidos es nulo.");
 						return null;
 					}
-					
-					if (material.get(i).length() <= 0 || material.get(i).length() > 30 || material.get(i)==null) {
-						System.out
-								.println("Algun material de los introducidos esta vacio/tiene mas de 30 caracteres/es nulo");
+
+					if (material.get(i).length() <= 0 || material.get(i).length() > 30 || material.get(i) == null) {
+						System.out.println(
+								"Algun material de los introducidos esta vacio/tiene mas de 30 caracteres/es nulo");
 						return null;
 					}
 				}
@@ -270,6 +273,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 										if (Character.isDigit(DNI.charAt(j))) {
 											nums++;
+											sum += Character.getNumericValue(DNI.charAt(i));
 										}
 									}
 									if (nums != 8) {
@@ -281,6 +285,21 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 											System.out.println(
 													"Algun DNI de personal es incorrecto (no contiene letra).");
 											return null;
+										}
+										int mod = sum % 23 - 1;
+										// obtenemos la letra esperada
+										mayus = letras.charAt(mod);
+										// pasamos la letra esperada a minuscula
+										minus = letras.toLowerCase().charAt(mod);
+										// si la letra introducida no es la esperdada en mayuscula
+										if (!(mayus.equals(DNI.charAt(DNI.length() - 1)))) {
+											// si la letra introducida no es la esperada en minuscula
+											if (!(minus.equals(DNI.charAt(DNI.length() - 1)))) {
+												// informamos al usuario y enviamos null
+												System.out.println(
+														"El dni no tiene un formato valido. Letra no coincide.");
+												return null;
+											}
 										}
 									}
 								}
@@ -347,7 +366,9 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 				System.out.println("El valor de 'material' es incorrecto (nulo o vacio)");
 				return null;
 			}
-		} else {
+		} else
+
+		{
 			System.out.println("El valor de 'descripcion' es incorrecto (nulo o vacio)");
 			return null;
 		}
@@ -537,7 +558,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 		for (OT ot : this.ots) {
 			if (ot.getID().equals(ID)) {
-				for (int i=0;i<ot.getPresupuestos().size();i++) {
+				for (int i = 0; i < ot.getPresupuestos().size(); i++) {
 					if (ot.getPresupuestos().get(i) == (double) presupuesto) {
 						ot.getPresupuestos().remove(i);
 						ot.setPresupuestos(ot.getPresupuestos());
@@ -601,7 +622,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 		for (OT ot : this.ots) {
 			if (ot.getID().equals(ID)) {
-				for (int i=0;i<ot.getMaterial().size();i++) {
+				for (int i = 0; i < ot.getMaterial().size(); i++) {
 					if (ot.getMaterial().get(i).equals(material)) {
 						ot.getMaterial().remove(i);
 						ot.setMaterial(ot.getMaterial());
@@ -694,7 +715,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 		for (OT ot : this.ots) {
 			if (ot.getID().equals(ID)) {
-				for (int i=0;i<ot.getPersonal().size();i++) {
+				for (int i = 0; i < ot.getPersonal().size(); i++) {
 					if (ot.getPersonal().get(i).equals(empleado)) {
 						ot.getPersonal().remove(i);
 						ot.setPersonal(ot.getPersonal());
@@ -742,20 +763,20 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 		// TODO Auto-generated method stub
 		float total = 0;
 
-		if (campoFiltro == null && valorFiltro==null) {
+		if (campoFiltro == null && valorFiltro == null) {
 
 			for (OT ot : this.ots) {
 				total += ot.getCoste();
 			}
 			return (double) total;
 		}
-		
+
 		if (this.ots.isEmpty()) {
 			System.out.println("Todavia no hay OOTT guardadas.");
 			return null;
 		}
 
-		if (valorFiltro == null && campoFiltro!=null) {
+		if (valorFiltro == null && campoFiltro != null) {
 			System.out.println("No se ha proporcionado ningun valor de filtrado.");
 			return null;
 		}
@@ -763,26 +784,26 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 		switch (campoFiltro) {
 
 		case "responsable":
-			if (valorFiltro.length() > 20 || valorFiltro.length()<=0) {
+			if (valorFiltro.length() > 20 || valorFiltro.length() <= 0) {
 				System.out.println("El nombre del responsable/empresa introducido es incorrecto.");
 				return null;
 			}
-			
-			if(valorFiltro.length()==9 && Character.isDigit(valorFiltro.charAt(0)) && Character.isAlphabetic(valorFiltro.length()-1)) {
+
+			if (valorFiltro.length() == 9 && Character.isDigit(valorFiltro.charAt(0))
+					&& Character.isAlphabetic(valorFiltro.length() - 1)) {
 				System.out.println("El nombre del responsable/empresa introducido es incorrecto.");
 				return null;
 			}
-			
+
 			String[] partes = valorFiltro.split("/");
 			if (valorFiltro.length() == 8 && Character.isDigit(valorFiltro.charAt(0))
 					&& Character.isDigit(valorFiltro.charAt(1)) && valorFiltro.charAt(2) == '/'
-					&& Character.isDigit(valorFiltro.charAt(3))
-					&& Character.isDigit(valorFiltro.charAt(4)) && valorFiltro.charAt(5) == '/'
-					&& Character.isDigit(valorFiltro.charAt(6))
-					&& Character.isDigit(valorFiltro.charAt(7))
-					&& Integer.valueOf(partes[0]) < 31 && Integer.valueOf(partes[1]) < 12
+					&& Character.isDigit(valorFiltro.charAt(3)) && Character.isDigit(valorFiltro.charAt(4))
+					&& valorFiltro.charAt(5) == '/' && Character.isDigit(valorFiltro.charAt(6))
+					&& Character.isDigit(valorFiltro.charAt(7)) && Integer.valueOf(partes[0]) < 31
+					&& Integer.valueOf(partes[1]) < 12
 					&& (Integer.valueOf(partes[0]) <= 28 || Integer.valueOf(partes[1]) != 2)) {
-				
+
 				System.out.println("El nombre del responsable/empresa introducido es incorrecto.");
 				return null;
 			}
