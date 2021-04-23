@@ -226,7 +226,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 						return null;
 					}
 
-					if (material.get(i).length() <= 0 || material.get(i).length() > 30 || material.get(i) == null) {
+					if (material.get(i) == null || material.get(i).length() <= 0 || material.get(i).length() > 30) {
 						System.out.println(
 								"Algun material de los introducidos esta vacio/tiene mas de 30 caracteres/es nulo");
 						return null;
@@ -269,11 +269,11 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 												"Algun DNI de personal es incorrecto (empieza por una letra).");
 										return null;
 									}
-									for (int j = 0; j < personal.get(i).length(); j++) {
+									for (int j = 0; j < DNI.length(); j++) {
 
 										if (Character.isDigit(DNI.charAt(j))) {
 											nums++;
-											sum += Character.getNumericValue(DNI.charAt(i));
+											sum += Character.getNumericValue(DNI.charAt(j));
 										}
 									}
 									if (nums != 8) {
@@ -294,13 +294,13 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 										// si la letra introducida no es la esperdada en mayuscula
 										if (!(mayus.equals(DNI.charAt(DNI.length() - 1)))) {
 											// si la letra introducida no es la esperada en minuscula
-											return null;
+											if (!(minus.equals(DNI.charAt(DNI.length() - 1)))) {
+												// informamos al usuario y enviamos null
+												System.out.println("El dni no tiene un formato valido. Letra no coincide.");
+												return null;
+											}
 										}
-										if (!(minus.equals(DNI.charAt(DNI.length() - 1)))) {
-											// informamos al usuario y enviamos null
-											System.out.println("El dni no tiene un formato valido. Letra no coincide.");
-											return null;
-										}
+										
 									}
 
 								}
@@ -744,9 +744,9 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 		boolean deleted = false;
 
-		for (OT ot : this.ots) {
-			if (ot.getID().equals(ID)) {
-				this.ots.remove(ot);
+		for (int i=0;i<this.ots.size();i++) {
+			if (this.ots.get(i).getID().equals(ID)) {
+				this.ots.remove(i);
 				deleted = true;
 			}
 		}
