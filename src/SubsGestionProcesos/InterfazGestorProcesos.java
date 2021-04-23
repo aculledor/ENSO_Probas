@@ -11,6 +11,6 @@ public interface InterfazGestorProcesos {
 	responsable, String servicio, List<Incidencia> incidencia);
 	void actualizarProceso(String nombre, String campo, String valor);
 	void eliminarProceso(String nombre);
-	void vincularIncidencia(Incidencia incidencia);
-	void vincularOT(OT ot);
+	void vincularIncidencia(String nombre, Incidencia incidencia);
+	void vincularOT(String nombre, OT ot);
 }
