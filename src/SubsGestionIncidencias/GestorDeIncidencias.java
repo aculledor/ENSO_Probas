@@ -107,7 +107,7 @@ public class GestorDeIncidencias implements InterfazGestorIncidencias {
 									return resultado;
 								} else {
 									//si el valor dni es incorrecto se avisa al usuario y se devuelve null
-									System.out.println("El dni tiene un formato incorrecto. La letar no coincide.");
+									System.out.println("El dni tiene un formato incorrecto. La letra no coincide.");
 									return null;
 								}
 							} else {
