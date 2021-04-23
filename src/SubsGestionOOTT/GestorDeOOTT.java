@@ -748,6 +748,9 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 		for (int i=0;i<this.ots.size();i++) {
 			if (this.ots.get(i).getID().equals(ID)) {
+				
+				this.ots.get(i).getProceso().getOts().remove(this.ots.get(i));
+				this.ots.get(i).getProceso().setOts(this.ots.get(i).getProceso().getOts());;
 				this.ots.remove(i);
 				deleted = true;
 			}
