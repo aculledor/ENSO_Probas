@@ -31,17 +31,17 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 		}
 
 		if (campoFiltro.length() <= 0) {
-			System.out.println("El campo introducido no es válido.");
+			System.out.println("El campo introducido no es valido.");
 			return null;
 		}
 
 		if (valorFiltro == null || valorFiltro.length() <= 0) {
-			System.out.println("El valor introducido no es válido.");
+			System.out.println("El valor introducido no es valido.");
 			return null;
 		}
 
 		if (this.ots.isEmpty()) {
-			System.out.println("No hay OOTT almacenadas todavía.");
+			System.out.println("No hay OOTT almacenadas todavia.");
 			return null;
 		}
 
@@ -61,7 +61,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 		case "descripcion":
 			if (valorFiltro.length() > 200) {
-				System.out.println("La descripcion introducida tiene más de 200 caracteres.");
+				System.out.println("La descripcion introducida tiene mas de 200 caracteres.");
 				return null;
 			}
 
@@ -74,7 +74,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 		case "material":
 			if (valorFiltro.length() > 30) {
-				System.out.println("El material introducido tiene más de 30 caracteres.");
+				System.out.println("El material introducido tiene mas de 30 caracteres.");
 				return null;
 			}
 
@@ -117,7 +117,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 		case "responsable":
 			if (valorFiltro.length() > 20) {
-				System.out.println("El responsable introducido tiene más de 20 caracteres.");
+				System.out.println("El responsable introducido tiene mas de 20 caracteres.");
 				return null;
 			}
 
@@ -177,7 +177,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 
 		case "estado":
 			if (valorFiltro.length() > 20) {
-				System.out.println("El estado introducido tiene más de 20 caracteres.");
+				System.out.println("El estado introducido tiene mas de 20 caracteres.");
 				return null;
 			}
 
@@ -215,27 +215,28 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 			Proceso proceso) {
 		// TODO Auto-generated method stub
 		OT ot = null;
-		if (descripcion != null && descripcion.length() > 0 && descripcion.length() <= 200) {
+		if (descripcion.length() > 0 && descripcion.length() <= 200) {
 			if (material != null && !material.isEmpty()) {
 				for (int i = 0; i < material.size(); i++) {
-					if (material.get(i).length() <= 0 || material.get(i).length() > 30) {
-						System.out
-								.println("Algún material de los introducidos está vacío o tiene más de 30 caracteres");
+					if (material.get(i) == null) {
+						System.out.println("Algun material de los introducidos es nulo.");
 						return null;
 					}
-					if (material.get(i) == null) {
-						System.out.println("Algún material de los introducidos es nulo.");
+					
+					if (material.get(i).length() <= 0 || material.get(i).length() > 30 || material.get(i)==null) {
+						System.out
+								.println("Algun material de los introducidos esta vacio/tiene mas de 30 caracteres/es nulo");
 						return null;
 					}
 				}
 				if (presupuestos != null) {
 					for (int i = 0; i < presupuestos.size(); i++) {
 						if (presupuestos.get(i) == null) {
-							System.out.println("Algún presupuesto de los introducidos es nulo.");
+							System.out.println("Algun presupuesto de los introducidos es nulo.");
 							return null;
 						}
 						if (presupuestos.get(i) < 0) {
-							System.out.println("Algún presupuesto de los introducidos es menor de 0.");
+							System.out.println("Algun presupuesto de los introducidos es menor de 0.");
 							return null;
 						}
 					}
@@ -244,16 +245,16 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 							if (personal != null && !personal.isEmpty()) {
 								for (int i = 0; i < personal.size(); i++) {
 									if (personal.get(i) == null) {
-										System.out.println("Algún personal de los introducidos es nulo.");
+										System.out.println("Algun personal de los introducidos es nulo.");
 										return null;
 									}
 									if (personal.get(i).length() <= 0) {
-										System.out.println("Algún personal de los introducidos está vacío.");
+										System.out.println("Algun personal de los introducidos esta vacio.");
 										return null;
 									}
 									if (personal.get(i).length() != 9) {
 										System.out.println(
-												"Algún personal de los introducidos no contiene los 9 caracteres.");
+												"Algun personal de los introducidos no contiene los 9 caracteres.");
 										return null;
 									}
 									// comprobar que los DNIs sean correctos
@@ -262,7 +263,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 									// si ya empieza por letra, es incorrecto
 									if (Character.isAlphabetic(DNI.charAt(0))) {
 										System.out.println(
-												"Algún DNI de personal es incorrecto (empieza por una letra).");
+												"Algun DNI de personal es incorrecto (empieza por una letra).");
 										return null;
 									}
 									for (int j = 0; j < personal.get(i).length(); j++) {
@@ -273,12 +274,12 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 									}
 									if (nums != 8) {
 										System.out.println(
-												"Algún DNI de personal es incorrecto (no contiene 8 números).");
+												"Algun DNI de personal es incorrecto (no contiene 8 numeros).");
 										return null;
 									} else {
 										if (!Character.isAlphabetic(DNI.charAt(DNI.length() - 1))) {
 											System.out.println(
-													"Algún DNI de personal es incorrecto (no contiene letra).");
+													"Algun DNI de personal es incorrecto (no contiene letra).");
 											return null;
 										}
 									}
@@ -294,7 +295,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 											&& Integer.valueOf(partes[0]) < 31 && Integer.valueOf(partes[1]) < 12
 											&& (Integer.valueOf(partes[0]) <= 28 || Integer.valueOf(partes[1]) != 2)) {
 										if (duracion != null && duracion > 0) {
-											if (estado.length() > 0 && estado != null && estado.length() <= 20) {
+											if (estado != null && estado.length() > 0 && estado.length() <= 20) {
 												if (proceso != null) {
 													ArrayList<Float> presupuestos1 = new ArrayList<>();
 													ot = new OT(((Integer) this.ots.size()).toString(), descripcion,
@@ -309,7 +310,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 													return null;
 												}
 											} else {
-												System.out.println("El valor de 'estado' es incorrecto (nulo o vacío)");
+												System.out.println("El valor de 'estado' es incorrecto (nulo o vacio)");
 												return null;
 											}
 										} else {
@@ -319,7 +320,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 										}
 									} else {
 										System.out.println(
-												"El valor de 'fechaInicio' tiene un formato incorrecto o valores no válidos.");
+												"El valor de 'fechaInicio' tiene un formato incorrecto o valores no validos.");
 										return null;
 									}
 								} else {
@@ -327,11 +328,11 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 									return null;
 								}
 							} else {
-								System.out.println("El valor de 'personal' es incorrecto (nulo o vacío)");
+								System.out.println("El valor de 'personal' es incorrecto (nulo o vacio)");
 								return null;
 							}
 						} else {
-							System.out.println("El valor de 'responsable' es incorrecto (nulo o vacío)");
+							System.out.println("El valor de 'responsable' es incorrecto (nulo o vacio)");
 							return null;
 						}
 					} else {
@@ -343,11 +344,11 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 					return null;
 				}
 			} else {
-				System.out.println("El valor de 'material' es incorrecto (nulo o vacío)");
+				System.out.println("El valor de 'material' es incorrecto (nulo o vacio)");
 				return null;
 			}
 		} else {
-			System.out.println("El valor de 'descripcion' es incorrecto (nulo o vacío)");
+			System.out.println("El valor de 'descripcion' es incorrecto (nulo o vacio)");
 			return null;
 		}
 	}
@@ -372,12 +373,12 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 		}
 
 		if (campo == null || campo.length() <= 0) {
-			System.out.println("El campo a cambiar es nulo o vacío");
+			System.out.println("El campo a cambiar es nulo o vacio");
 			return;
 		}
 
 		if (valor == null || valor.length() <= 0) {
-			System.out.println("El valor a cambiar es nulo o vacío");
+			System.out.println("El valor a cambiar es nulo o vacio");
 			return;
 		}
 
@@ -650,7 +651,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 		}
 
 		if (nums != 8) {
-			System.out.println("El DNI introducido es incorrecto (no contiene 8 números).");
+			System.out.println("El DNI introducido es incorrecto (no contiene 8 numeros).");
 			return;
 		} else {
 			if (!Character.isAlphabetic(empleado.charAt(empleado.length() - 1))) {
@@ -685,7 +686,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 		}
 
 		if (empleado == null || empleado.length() == 0) {
-			System.out.println("El empleado introducido es nulo o vacío.");
+			System.out.println("El empleado introducido es nulo o vacio.");
 			return;
 		}
 
@@ -755,14 +756,33 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 		}
 
 		if (valorFiltro == null && campoFiltro!=null) {
-			System.out.println("No se ha proporcionado ningún valor de filtrado.");
+			System.out.println("No se ha proporcionado ningun valor de filtrado.");
 			return null;
 		}
 
 		switch (campoFiltro) {
 
 		case "responsable":
-			if (valorFiltro.length() > 20) {
+			if (valorFiltro.length() > 20 || valorFiltro.length()<=0) {
+				System.out.println("El nombre del responsable/empresa introducido es incorrecto.");
+				return null;
+			}
+			
+			if(valorFiltro.length()==9 && Character.isDigit(valorFiltro.charAt(0)) && Character.isAlphabetic(valorFiltro.length()-1)) {
+				System.out.println("El nombre del responsable/empresa introducido es incorrecto.");
+				return null;
+			}
+			
+			String[] partes = valorFiltro.split("/");
+			if (valorFiltro.length() == 8 && Character.isDigit(valorFiltro.charAt(0))
+					&& Character.isDigit(valorFiltro.charAt(1)) && valorFiltro.charAt(2) == '/'
+					&& Character.isDigit(valorFiltro.charAt(3))
+					&& Character.isDigit(valorFiltro.charAt(4)) && valorFiltro.charAt(5) == '/'
+					&& Character.isDigit(valorFiltro.charAt(6))
+					&& Character.isDigit(valorFiltro.charAt(7))
+					&& Integer.valueOf(partes[0]) < 31 && Integer.valueOf(partes[1]) < 12
+					&& (Integer.valueOf(partes[0]) <= 28 || Integer.valueOf(partes[1]) != 2)) {
+				
 				System.out.println("El nombre del responsable/empresa introducido es incorrecto.");
 				return null;
 			}

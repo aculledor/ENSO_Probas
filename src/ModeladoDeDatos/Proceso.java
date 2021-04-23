@@ -1,6 +1,9 @@
 package ModeladoDeDatos;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Proceso {
 	
@@ -14,6 +17,7 @@ public class Proceso {
 	private String servicio;
 	private ArrayList<Incidencia> incidencias;
 	private ArrayList<OT> ots;
+	private String fechaCreacion;
 	
 	// Constructor
 	public Proceso(String nombre, String descripcion, Float coste, Integer estimado, String estado, String responsable,
@@ -28,6 +32,9 @@ public class Proceso {
 		this.servicio = servicio;
 		this.incidencias = incidencias;
 		this.ots = ots;
+		DateFormat format = new SimpleDateFormat("dd/MM/yy");
+		Date hoy = new Date();
+		this.fechaCreacion = format.format(hoy);
 	}
 
 	public Proceso(String nombre, String descripcion, Float coste, Integer estimado, String estado, String responsable,
@@ -42,6 +49,9 @@ public class Proceso {
 		this.servicio = servicio;
 		this.incidencias = incidencias;
 		this.ots = new ArrayList<>();
+		DateFormat format = new SimpleDateFormat("dd/MM/yy");
+		Date hoy = new Date();
+		this.fechaCreacion = format.format(hoy);
 	}
 
 	public Proceso(String nombre, String descripcion, Float coste, Integer estimado, String estado, String responsable,
@@ -57,6 +67,9 @@ public class Proceso {
 		this.incidencias = new ArrayList<>();
 		this.incidencias.add(incidencia);
 		this.ots = new ArrayList<>();
+		DateFormat format = new SimpleDateFormat("dd/MM/yy");
+		Date hoy = new Date();
+		this.fechaCreacion = format.format(hoy);
 	}
 	
 	
@@ -133,6 +146,10 @@ public class Proceso {
 
 	public void setOts(ArrayList<OT> ots) {
 		this.ots = ots;
+	}
+	
+	public String getFechaCreacion() {
+		return fechaCreacion;
 	}
 	
 	
