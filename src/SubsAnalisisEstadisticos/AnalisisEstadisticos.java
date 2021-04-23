@@ -32,7 +32,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 		ArrayList<Incidencia> listaIncidencias = incidencias.getIncidencias(null, null);
 		// Se comprueba si se ha solicitado un filtro
 		if (campoFiltro == null) {
-			// Se recorre la lista (para añadir complejidad ciclomática) y se aumenta el
+			// Se recorre la lista (para aï¿½adir complejidad ciclomï¿½tica) y se aumenta el
 			// contador
 			for (int i = 0; i < listaIncidencias.size(); i++)
 				contador++;
@@ -241,7 +241,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 		ArrayList<Proceso> listaProcesos = procesos.getProcesos(null, null);
 		// Se comprueba si se ha solicitado un filtro
 		if (campoFiltro == null) {
-			// Se recorre la lista (para añadir complejidad ciclomática) y se aumenta el
+			// Se recorre la lista (para aï¿½adir complejidad ciclomï¿½tica) y se aumenta el
 			// contador
 			for (int i = 0; i < listaProcesos.size(); i++)
 				contador++;
@@ -421,7 +421,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 		ArrayList<OT> listaOOTT = ots.getOOTT(null, null);
 		// Se comprueba si se ha solicitado un filtro
 		if (campoFiltro == null) {
-			// Se recorre la lista (para añadir complejidad ciclomática) y se aumenta el
+			// Se recorre la lista (para aï¿½adir complejidad ciclomï¿½tica) y se aumenta el
 			// contador
 			for (int i = 0; i < listaOOTT.size(); i++)
 				contador++;
@@ -608,7 +608,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 		ArrayList<Proceso> listaProcesos = procesos.getProcesos(null, null);
 		// Se comprueba si se ha solicitado un filtro
 		if (campoFiltro == null) {
-			// Se recorre la lista (para añadir complejidad ciclomática) y se aumenta el
+			// Se recorre la lista (para aï¿½adir complejidad ciclomï¿½tica) y se aumenta el
 			// contador
 			for (Proceso p : listaProcesos)
 				total += p.getCoste();
@@ -788,7 +788,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 		ArrayList<OT> listaOOTT = ots.getOOTT(null, null);
 		// Se comprueba si se ha solicitado un filtro
 		if (campoFiltro == null) {
-			// Se recorre la lista (para añadir complejidad ciclomática) y se aumenta el
+			// Se recorre la lista (para aï¿½adir complejidad ciclomï¿½tica) y se aumenta el
 			// contador
 			for (OT ot : listaOOTT)
 				total += ot.getCoste();
@@ -982,7 +982,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 			ArrayList<Incidencia> listaIncidencias = incidencias.getIncidencias(null, null);
 			// Se comprueba si se ha solicitado un filtro
 			if (campoFiltro == null) {
-				// Se recorre la lista (para añadir complejidad ciclomática)
+				// Se recorre la lista (para aï¿½adir complejidad ciclomï¿½tica)
 				// Se crean el DateFormat, Calendar y Date necesarios para revisar el dia de la
 				// semana
 				DateFormat format = new SimpleDateFormat("dd/MM/yy");
@@ -1515,7 +1515,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 			ArrayList<Proceso> listaProcesos = procesos.getProcesos(null, null);
 			// Se comprueba si se ha solicitado un filtro
 			if (campoFiltro == null) {
-				// Se recorre la lista (para añadir complejidad ciclomática)
+				// Se recorre la lista (para aï¿½adir complejidad ciclomï¿½tica)
 				// Se crean el DateFormat, Calendar y Date necesarios para revisar el dia de la
 				// semana
 				DateFormat format = new SimpleDateFormat("dd/MM/yy");
@@ -1984,7 +1984,7 @@ public class AnalisisEstadisticos implements InterfazGestorEstadisticas {
 			ArrayList<OT> listaOOTT = ots.getOOTT(null, null);
 			// Se comprueba si se ha solicitado un filtro
 			if (campoFiltro == null) {
-				// Se recorre la lista (para añadir complejidad ciclomática)
+				// Se recorre la lista (para aï¿½adir complejidad ciclomï¿½tica)
 				// Se crean el DateFormat, Calendar y Date necesarios para revisar el dia de la
 				// semana
 				DateFormat format = new SimpleDateFormat("dd/MM/yy");
