@@ -294,47 +294,56 @@ public class GestorDeProcesos implements InterfazGestorProcesos {
 	}
 
 	@Override
-	public void eliminarProceso(String nombre) {
-		if(nombre!=null && nombre.length()>0 && nombre.length()<=20) {
-			Boolean borrado=false;
-			for(int i=0;i<this.procesos.size();i++) {
-				if(this.procesos.get(i).getNombre().equals(nombre)) {
-					this.procesos.remove(i);
-					borrado=true;
-					break;
-				}
-			}
-			if(borrado)
-				System.out.println("Se ha borrado el proceso");
-			else
-				System.out.println("El proceso con el nombre indicado no existe");
-		}
-		System.out.println("El nombre introducido no es correcto");
-		return;
-	}
-
-	@Override
-	public void vincularIncidencia(String nombre, Incidencia incidencia) {
-		if(incidencia!=null) {
-			if(nombre!=null && nombre.length()>0 && nombre.length()<=20) {
-				Boolean vinculado=false;
-				for(int i=0;i<this.procesos.size();i++) {
-					if(this.procesos.get(i).getNombre().equals(nombre)) {
-						this.procesos.get(i).getIncidencias().add(incidencia);
-						incidencia.setProceso(this.procesos.get(i));
-						vinculado=true;
-						break;
-					}
-				}
-				if(vinculado)
-					System.out.println("Se ha vinculado la incidencia al proceso");
-				else
-					System.out.println("El proceso con el nombre indicado no existe");
-			}
-			System.out.println("El nombre introducido no es correcto");
-			return;
-		}
-		System.out.println("La incidencia seleccionada no es válida");
-	}
+    public void eliminarProceso(String nombre) {
+        if(nombre!=null && nombre.length()>0 && nombre.length()<=20) {
+            Boolean borrado=false;
+            for(int i=0;i<this.procesos.size();i++) {
+                if(this.procesos.get(i).getNombre().equals(nombre)) {
+                    this.procesos.remove(i);
+                    borrado=true;
+                    break;
+                }
+            }
+            if(borrado) {
+                System.out.println("Se ha borrado el proceso");
+                return;
+            }
+            else {
+                System.out.println("El proceso con el nombre indicado no existe");
+                return;
+            }
+        }
+        System.out.println("El nombre introducido no es correcto");
+        return;
+    }
 	
+    @Override
+    public void vincularIncidencia(String nombre, Incidencia incidencia) {
+        if(incidencia!=null) {
+            if(nombre!=null && nombre.length()>0 && nombre.length()<=20) {
+                Boolean vinculado=false;
+                for(int i=0;i<this.procesos.size();i++) {
+                    if(this.procesos.get(i).getNombre().equals(nombre)) {
+                        this.procesos.get(i).getIncidencias().add(incidencia);
+                        incidencia.setProceso(this.procesos.get(i));
+                        vinculado=true;
+                        break;
+                    }
+                }
+                if(vinculado) {
+                    System.out.println("Se ha vinculado la incidencia al proceso");
+                    return;
+                }
+                else {
+                    System.out.println("El proceso con el nombre indicado no existe");
+                    return;
+                }
+            }
+            System.out.println("El nombre introducido no es correcto");
+            return;
+        }
+        System.out.println("La incidencia seleccionada no es válida");
+    }
 }
+	
+

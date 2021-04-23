@@ -104,7 +104,7 @@ public class Incidencia {
 	public String toString() {
 		return "Incidencia [ID=" + ID + ", nombreCiudadano=" + nombreCiudadano + ", DNI=" + DNI + ", telefono="
 				+ telefono + ", descripcion=" + descripcion + ", localizacion=" + localizacion + ", tipo=" + tipo
-				+ ", proceso=" + proceso + ", fechaCreacion=" + fechaCreacion + "]";
+				+ ", proceso=" + proceso.getNombre() + ", fechaCreacion=" + fechaCreacion + "]";
 	}
 	@Override
 	public int hashCode() {

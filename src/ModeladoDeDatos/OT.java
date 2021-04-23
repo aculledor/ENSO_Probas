@@ -128,7 +128,7 @@ public class OT {
 		return "OT [ID=" + ID + ", descripcion=" + descripcion + ", material=" + material + ", presupuestos="
 				+ presupuestos + ", coste=" + coste + ", responsable=" + responsable + ", personal=" + personal
 				+ ", fechaInicio=" + fechaInicio + ", duracion=" + duracion + ", estado=" + estado + ", proceso="
-				+ proceso + "]";
+				+ proceso.getNombre() + "]";
 	}
 
 	@Override
