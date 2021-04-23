@@ -327,6 +327,7 @@ public class GestorDeOOTT implements InterfazGestorOOTT {
 													ots.add(ot);
 													proceso.getOts().add(ot);
 													proceso.setOts(proceso.getOts());
+													
 													return ot;
 												} else {
 													System.out.println("El proceso proporcionado es null.");
